@@ -1,12 +1,13 @@
+function getFormvalue(event) {
+  event.preventDefault(); 
 
- function getFormvalue(event) {
-      event.preventDefault(); // Prevents page reload on form submit
+  const fname = document.querySelector('input[name="fname"]').value.trim();
+  const lname = document.querySelector('input[name="lname"]').value.trim();
 
-      const form1 = event.target;
-      const fname = form1.fname.value.trim();
-      const lname = form1.lname.value.trim();
+  if (!fname && !lname) {
+    alert("Please enter your full name.");
+    return;
+  }
 
-      const fullName = fname + " " + lname;
-
-      alert(fullName);
-    }
+  alert(`${fname} ${lname}`);
+}
